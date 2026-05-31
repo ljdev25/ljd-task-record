@@ -669,7 +669,7 @@ export default function StaffDashboardPage() {
         className="fixed top-0 right-0 z-20 bg-white border-b border-[#F3F4F6] flex items-center justify-between px-4"
         style={{ left: 0, height: '52px' }}
       >
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 md:ml-[220px]">
           {/* Hamburger (mobile) */}
           <button
             className="md:hidden w-9 h-9 flex items-center justify-center rounded-lg hover:bg-gray-100 text-gray-500 transition"
@@ -680,10 +680,7 @@ export default function StaffDashboardPage() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-          <h1
-            className="text-sm font-semibold text-gray-900"
-            style={{ marginLeft: 'calc(220px - 16px)' }}
-          >
+          <h1 className="text-sm font-semibold text-gray-900">
             My Tasks
           </h1>
         </div>
@@ -693,54 +690,50 @@ export default function StaffDashboardPage() {
       </header>
 
       {/* ── MAIN CONTENT ── */}
-      <main
-        className="min-h-screen bg-[#F9FAFB]"
-        style={{ marginLeft: '220px', padding: '24px', paddingTop: 'calc(52px + 24px)' }}
-      >
-        <style>{`@media (max-width: 767px) { main { margin-left: 0 !important; } }`}</style>
+      <main className="min-h-screen bg-[#F9FAFB] md:ml-[220px] p-6 pt-[76px]">
 
         {/* Stats row */}
         {loading ? (
-          <div className="grid grid-cols-3 gap-4 mb-6">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6">
             <SkeletonCard /><SkeletonCard /><SkeletonCard />
           </div>
         ) : (
-          <div className="grid grid-cols-3 gap-4 mb-6">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6">
             {/* To Do */}
-            <div className="bg-white rounded-xl border border-[#F3F4F6] p-4 flex flex-col gap-3" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+            <div className="bg-white rounded-xl border border-[#F3F4F6] p-3 sm:p-4 flex flex-col gap-3" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
               <div className="flex items-start justify-between">
                 <div className="flex flex-col gap-1">
-                  <p className="text-sm text-gray-500">To Do</p>
-                  <p className="text-3xl font-bold leading-none text-gray-900">{pendingCount}</p>
+                  <p className="text-xs sm:text-sm text-gray-500">To Do</p>
+                  <p className="text-2xl sm:text-3xl font-bold leading-none text-gray-900">{pendingCount}</p>
                 </div>
-                <div className="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center shrink-0">
-                  <IconList className="w-4 h-4 text-slate-500" />
+                <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-slate-100 flex items-center justify-center shrink-0">
+                  <IconList className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-500" />
                 </div>
               </div>
             </div>
 
             {/* In Progress */}
-            <div className="bg-white rounded-xl border border-[#F3F4F6] p-4 flex flex-col gap-3" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+            <div className="bg-white rounded-xl border border-[#F3F4F6] p-3 sm:p-4 flex flex-col gap-3" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
               <div className="flex items-start justify-between">
                 <div className="flex flex-col gap-1">
-                  <p className="text-sm text-gray-500">In Progress</p>
-                  <p className="text-3xl font-bold leading-none text-blue-600">{inProgressCount}</p>
+                  <p className="text-xs sm:text-sm text-gray-500">In Progress</p>
+                  <p className="text-2xl sm:text-3xl font-bold leading-none text-blue-600">{inProgressCount}</p>
                 </div>
-                <div className="w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
-                  <IconClock className="w-4 h-4 text-blue-500" />
+                <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                  <IconClock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-500" />
                 </div>
               </div>
             </div>
 
             {/* Completed */}
-            <div className="bg-white rounded-xl border border-[#F3F4F6] p-4 flex flex-col gap-3" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+            <div className="bg-white rounded-xl border border-[#F3F4F6] p-3 sm:p-4 flex flex-col gap-3" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
               <div className="flex items-start justify-between">
                 <div className="flex flex-col gap-1">
-                  <p className="text-sm text-gray-500">Completed</p>
-                  <p className="text-3xl font-bold leading-none text-green-600">{doneCount}</p>
+                  <p className="text-xs sm:text-sm text-gray-500">Completed</p>
+                  <p className="text-2xl sm:text-3xl font-bold leading-none text-green-600">{doneCount}</p>
                 </div>
-                <div className="w-9 h-9 rounded-full bg-green-50 flex items-center justify-center shrink-0">
-                  <IconCheckCircle className="w-4 h-4 text-green-500" />
+                <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-green-50 flex items-center justify-center shrink-0">
+                  <IconCheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-500" />
                 </div>
               </div>
             </div>

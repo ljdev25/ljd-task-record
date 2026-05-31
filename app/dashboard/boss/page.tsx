@@ -1158,7 +1158,7 @@ export default function BossDashboardPage() {
         className="fixed top-0 right-0 z-20 bg-white border-b border-[#F3F4F6] flex items-center justify-between px-6"
         style={{ left: 0, height: '52px', paddingLeft: '16px' }}
       >
-        <div className="flex items-center gap-3" style={{ paddingLeft: '0' }}>
+        <div className="flex items-center gap-3 md:ml-[220px]">
           {/* Hamburger (mobile) */}
           <button
             className="md:hidden w-9 h-9 flex items-center justify-center rounded-lg hover:bg-gray-100 text-gray-500 transition"
@@ -1169,10 +1169,7 @@ export default function BossDashboardPage() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-          <h1
-            className="text-sm font-semibold text-gray-900 md:ml-0"
-            style={{ marginLeft: 'calc(220px - 16px)' }}
-          >
+          <h1 className="text-sm font-semibold text-gray-900">
             {pageTitles[activeNav]}
           </h1>
         </div>
@@ -1193,12 +1190,7 @@ export default function BossDashboardPage() {
       </header>
 
       {/* ── MAIN CONTENT ── */}
-      <main
-        className="pt-14 min-h-screen"
-        style={{ marginLeft: '220px', padding: '24px', paddingTop: 'calc(52px + 24px)' }}
-      >
-        {/* On mobile, no margin-left */}
-        <style>{`@media (max-width: 767px) { main { margin-left: 0 !important; } }`}</style>
+      <main className="min-h-screen md:ml-[220px] p-6 pt-[76px]">
 
         {/* Fetch error */}
         {fetchError && (
