@@ -3,3 +3,14 @@
 @theme inline {
   --font-sans: var(--font-inter);
 }
+
+@keyframes toast-in {
+  from {
+    transform: translateX(calc(100% + 1.5rem));
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
